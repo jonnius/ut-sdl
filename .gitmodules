@@ -1,0 +1,32 @@
+[submodule "sdl3"]
+	path = sdl3
+	url = https://github.com/Semphriss/SDL.git
+	branch = ubuntu-touch
+[submodule "sdl2"]
+	path = sdl2
+	url = https://github.com/libsdl-org/sdl2-compat.git
+	branch = main
+[submodule "sdl3_image"]
+	path = sdl3_image
+	url = https://github.com/libsdl-org/SDL_image.git
+	branch = main
+[submodule "sdl2_image"]
+	path = sdl2_image
+	url = https://github.com/libsdl-org/SDL_image.git
+	branch = SDL2
+[submodule "sdl3_ttf"]
+	path = sdl3_ttf
+	url = https://github.com/libsdl-org/SDL_ttf.git
+	branch = release-3.2.x
+[submodule "sdl2_ttf"]
+	path = sdl2_ttf
+	url = https://github.com/libsdl-org/SDL_ttf.git
+	branch = release-2.24.x
+[submodule "sdl2_mixer"]
+	path = sdl2_mixer
+	url = https://github.com/libsdl-org/SDL_mixer.git
+	branch = release-2.8.x
+[submodule "sdl2_net"]
+	path = sdl2_net
+	url = https://github.com/libsdl-org/SDL_net.git
+	branch = release-2.2.x

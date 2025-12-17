@@ -1,0 +1,79 @@
+clickable_minimum_required: 8.6.0
+framework: ubuntu-touch-24.04-1.x
+is_app: false
+
+templates: &sdl_template
+  builder: cmake
+  dependencies_host:
+  - nasm
+  dependencies_target:
+  - libasound2-dev
+  - libaudio-dev
+  - libjack-dev
+  - libsndio-dev
+  - libx11-dev
+  - libxext-dev
+  - libxrandr-dev
+  - libxcursor-dev
+  - libxfixes-dev
+  - libxi-dev
+  - libxss-dev
+  - libxkbcommon-dev
+  - libdrm-dev
+  - libgbm-dev
+  - libgl1-mesa-dev
+  - libgles2-mesa-dev
+  - libegl1-mesa-dev
+  - libdbus-1-dev
+  - libudev-dev
+  - libwayland-dev
+  - libfreetype-dev
+
+libraries:
+  sdl3:
+    <<: *sdl_template
+    src_dir: sdl3
+
+  sdl2:
+    <<: *sdl_template
+    src_dir: sdl2
+
+  sdl3_image:
+    <<: *sdl_template
+    src_dir: sdl3_image
+    build_args:
+    - -DSDLIMAGE_VENDORED=ON
+    - -DAOM_NEON_INTRIN_FLAG=-mfpu=neon
+    - -DDAV1D_ASM=OFF
+
+  sdl2_image:
+    <<: *sdl_template
+    src_dir: sdl2_image
+    build_args:
+    - -DSDL2IMAGE_VENDORED=ON
+    - -DDAV1D_ASM=OFF
+    - -DSDL2_INCLUDE_DIR=${SDL2_LIB_INSTALL_DIR}/include/
+    - -DSDL2_LIBRARY=${SDL2_LIB_INSTALL_DIR}/lib
+
+  sdl3_ttf:
+    <<: *sdl_template
+    src_dir: sdl3_ttf
+    build_args:
+    - -DSDLTTF_VENDORED=ON
+
+  sdl2_ttf:
+    <<: *sdl_template
+    src_dir: sdl2_ttf
+    build_args:
+    - -DSDL2TTF_VENDORED=ON
+
+  sdl2_mixer:
+    <<: *sdl_template
+    src_dir: sdl2_mixer
+    build_args:
+    - -DSDL2MIXER_VENDORED=ON
+    - -DWAVPACK_ENABLE_ASM=no
+
+  sdl2_net:
+    <<: *sdl_template
+    src_dir: sdl2_net
